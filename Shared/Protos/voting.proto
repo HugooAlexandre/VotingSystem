@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "VotingSystem.Voting";
+
+package voting;
+
+service VotingService {
+  rpc GetCandidates (GetCandidatesRequest) returns (GetCandidatesResponse);
+  rpc Vote (VoteRequest) returns (VoteResponse);
+  rpc GetResults (GetResultsRequest) returns (GetResultsResponse);
+}
+
+message GetCandidatesRequest {}
+message GetResultsRequest {}
+
+message Candidate {
+  int32 id = 1;
+  string name = 2;
+}
+
+message GetCandidatesResponse {
+  repeated Candidate candidates = 1;
+}
+
+message VoteRequest {
+  string voting_credential = 1;
+  int32 candidate_id = 2;
+}
+
+message VoteResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message CandidateResult {
+  int32 id = 1;
+  string name = 2;
+  int32 votes = 3;
+}
+
+message GetResultsResponse {
+  repeated CandidateResult results = 1;
+}
