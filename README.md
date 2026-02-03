@@ -4,6 +4,7 @@
 Sistema de votação eletrónica desenvolvido para a UC de Integração de Sistemas (Ano letivo 2025-2026), implementando uma arquitetura de três autoridades para garantir o anonimato do voto.
 
 ## Estrutura do Projeto
+```text
 VotingSystem/
 ├── Shared/Protos/ # Ficheiros .proto comuns
 ├── VotingApp/ # Aplicação principal completa
@@ -81,4 +82,5 @@ Listar candidatos:
 grpcurl -insecure -proto Shared/Protos/voting.proto ken01.utad.pt:9091 voting.VotingService/GetCandidates
 
 Votar:
+
 '{ "voting_credential": "CRED-ABC-123", "candidate_id":1}' | grpcurl -insecure -proto Shared/Protos/voting.proto -d "@" ken01.utad.pt:9091 voting.VotingService/Vote
