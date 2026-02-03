@@ -13,7 +13,7 @@ VotingSystem/
 ├── README.md
 ├── build-and-run.bat # Script Windows
 └── build-and-run.sh # Script Linux/macOS
-
+```
 
 ## Funcionalidades
 
@@ -84,3 +84,4 @@ grpcurl -insecure -proto Shared/Protos/voting.proto ken01.utad.pt:9091 voting.Vo
 Votar:
 
 '{ "voting_credential": "CRED-ABC-123", "candidate_id":1}' | grpcurl -insecure -proto Shared/Protos/voting.proto -d "@" ken01.utad.pt:9091 voting.VotingService/Vote
+
